@@ -20,3 +20,8 @@ It is a stand-alone project based on the idea of the Jeopady! game show created 
 ### Licence
 
 This code (except otherwise noted in the files) is published and released to the Public Domain, so anyone can benefit from my work without any restrictions.
+
+### Screenshots
+
+![Screenshot of the clue board](screenshots/questionBoard.png)
+![Screenshot of the clue screen](screenshots/questionScreen.png)

@@ -36,6 +36,14 @@
                                         Thanks for playing PartyJeopardy! To play again, remove the <code>GameState</code> file in ./states!<br>
                                     <?php
                                     break;
+                                case 'updatePoints':
+                                    if(isset($_GET["add"])){
+                                        $game->addPlayerPoints($_GET["player"], (int)$_GET["value"]);
+                                    } else {
+                                        $game->subtractPlayerPoints($_GET["player"], (int)$_GET["value"]);
+                                    }
+                                    header("Location: index.php");
+                                    break;
                             }
                         ?>
                     </div>
@@ -47,7 +55,24 @@
                         Players
                     </div>
                     <div class="panel-body">
-                        Player settings
+                        <?php
+                            foreach($game->getPlayers() as $id => $player){
+                                echo '<h3>'.$player.'</h3>';
+                                echo '<h4>'.$game->getPlayerPoints($id).' Points</h4>';
+                                echo '<form method="get" action="index.php">';
+                                echo '<input type="hidden" name="state" value="updatePoints">';
+                                echo '<input type="hidden" name="player" value="'.$id.'">';
+                                echo '<div class="input-group">';
+                                    echo '<input type="text" name="value" placeholder="Add or subtract" class="form-control">';
+                                    echo '<span class="input-group-btn">';
+                                        echo '<input type="submit" name="add" value="+" class="btn btn-success">';
+                                        echo '<input type="submit" name="remove" value="-" class="btn btn-danger">';
+                                    echo '</span>';
+                                echo '</div>';
+
+                                echo '</form>';
+                            }
+                        ?>
                     </div>
                 </div>
             </div>
