@@ -4,7 +4,7 @@ function showQuestion(PartyJeopardy $game, $board, $category, $id){
     echo '<div class="text-center">';
     if($game->isDailyDouble($board, $category, $id) and empty($_GET["play"])){
         echo '<h1>DAILY DOUBLE</h1>';
-        echo '<a href="index.php?state=question&play=yes&board='.$board.'&category='.$category.'&question='.$id.'">PLAY NOW</a>';
+        echo '<a href="index.php?state=question&play=yes&board='.$board.'&category='.$category.'&question='.$id.'" class="btn btn-primary btn-lg">PLAY NOW</a>';
     } else {
         $question = $game->getQuestion($board, $category, $id);
         $game->playQuestion($board, $category, $id);

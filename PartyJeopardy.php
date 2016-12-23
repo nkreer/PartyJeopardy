@@ -24,11 +24,11 @@ class PartyJeopardy{
 
     public function __construct(){
         $this->questions = json_decode(file_get_contents("./game/questions.json"), true)["boards"];
-        for($dailyDoubles = 0; $dailyDoubles <= 2; $dailyDoubles++){
+        for($dailyDoubles = 1; $dailyDoubles <= self::AMOUNT_DAILY_DOUBLE; $dailyDoubles++){
             $this->dailyDoubles[] = $this->pickRandomQuestion();
         }
         foreach($this->questions as $board => $data){
-            foreach($data as $category => $question){
+            foreach($data["categories"] as $category => $question){
                 $this->playedQuestions[$board][$category] = [];
             }
         }
@@ -47,15 +47,18 @@ class PartyJeopardy{
             return 0;
         } elseif(!$this->isPlayedEntirely(1)){
             return 1;
-        } else {
+        } elseif(!$this->isPlayedEntirely(2)){
             return 2;
+        } else {
+            header("Location: index.php?state=end");
+            return 0;
         }
     }
 
     public function isPlayedEntirely($board){
         $played = true;
         foreach($this->playedQuestions[$board] as $category => $questions){
-            if(count($questions) < 4){
+            if(count($questions) < ($board !== 2 ? 5 : 1)){
                 $played = false;
                 break;
             }

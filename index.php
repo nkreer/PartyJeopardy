@@ -30,6 +30,12 @@
                                     require "JeopardyQuestion.php";
                                     showQuestion($game, $_GET["board"], $_GET["category"], $_GET["question"]);
                                     break;
+                                case 'end':
+                                    ?>
+                                        <h1>The End</h1>
+                                        Thanks for playing PartyJeopardy! To play again, remove the <code>GameState</code> file in ./states!<br>
+                                    <?php
+                                    break;
                             }
                         ?>
                     </div>
@@ -49,7 +55,7 @@
         <footer>
             <hr>
             <div class="text-right">
-                PartyJeopardy is free Software by Niklas Kreer. It is available on <a href="https://github.com/nkreer/PartyJeopardy">GitHub</a> and licenced to the public domain.
+                PartyJeopardy is FLOSS software by Niklas Kreer. It is available on <a href="https://github.com/nkreer/PartyJeopardy">GitHub</a> and licenced to the public domain.
             </div>
         </footer>
     </div>
