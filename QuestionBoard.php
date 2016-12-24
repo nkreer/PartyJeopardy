@@ -12,11 +12,11 @@ function showBoard(PartyJeopardy $game, $board){
                     foreach($questions as $id => $question){
                         if(!$game->isQuestionPlayed($board, $category, $id)){
                             ?>
-                                <a href="index.php?state=question&board=<?php echo $board; ?>&question=<?php echo $id; ?>&category=<?php echo $category; ?>" class="btn btn-primary btn-lg"><?php echo PartyJeopardy::getQuestionValue($id); ?></a>
+                                <a href="index.php?state=question&board=<?php echo $board; ?>&question=<?php echo $id; ?>&category=<?php echo $category; ?>" class="btn btn-primary btn-lg"><?php echo $game->getQuestionValue($id, $board); ?></a>
                             <?php
                         } else {
                             ?>
-                                <a href="#" class="btn btn-danger btn-lg"><?php echo PartyJeopardy::getQuestionValue($id) ?></a>
+                                <a href="#" class="btn btn-danger btn-lg"><?php echo $game->getQuestionValue($id, $board) ?></a>
                             <?php
                         }
                         echo '<hr>';

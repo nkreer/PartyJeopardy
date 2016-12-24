@@ -82,6 +82,9 @@
                                             <h3>Players</h3>
                                             Now, please tell me the names of all players. One name per row.<br><br>
                                             <textarea class="form-control" name="players" rows="4" placeholder="Player 1..."></textarea><br><br>
+                                            <h3>Daily Double</h3>
+                                            How many Daily Doubles do you want to have in your game?<br><br>
+                                            <input type="text" name="doubles" value="3" class="form-control"><br><br>
                                             <h3>Finish setup</h3>
                                             We're done! Click the button to initialise the game.<br>
                                             <input type="submit" class="btn btn-success" value="Start Game">
@@ -89,7 +92,7 @@
                                     <?php
                                     break;
                                 case 'hiddenSetup':
-                                    $game->setupQuestions($_GET["file"]);
+                                    $game->setupQuestions($_GET["file"], (int)$_GET["doubles"]);
                                     $game->players = explode("\n", urldecode($_GET["players"]));
                                     $game->saveState();
                                     header("Location: index.php");

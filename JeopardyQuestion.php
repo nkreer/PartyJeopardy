@@ -16,7 +16,7 @@ function showQuestion(PartyJeopardy $game, $board, $category, $id){
         echo '<a onclick="showAnswer()" class="btn btn-info">Show Question</a><br><br>';
         echo '<div id="answer" style="display:none;"><div class="panel panel-info"><div class="panel-heading">Answer</div><div class="panel-body"><h2>'.$question["answer"].'</h2></div></div></div>';
         foreach($game->getPlayers() as $playerId => $player){
-            echo '<a class="btn btn-success btn-xs" href="index.php?state=updatePoints&add=yes&value='.PartyJeopardy::getQuestionValue($id).'&player='.$playerId.'"> Give points to '.$player.'</a> ';
+            echo '<a class="btn btn-success btn-xs" href="index.php?state=updatePoints&add=yes&value='.$game->getQuestionValue($id, $board).'&player='.$playerId.'"> Give points to '.$player.'</a> ';
         }
     }
     echo '<br><br><a href="index.php" class="btn btn-info btn-xs">Return to Board</a>';
