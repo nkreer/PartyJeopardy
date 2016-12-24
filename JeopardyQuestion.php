@@ -8,10 +8,13 @@ function showQuestion(PartyJeopardy $game, $board, $category, $id){
     } else {
         $question = $game->getQuestion($board, $category, $id);
         $game->playQuestion($board, $category, $id);
+        if(isset($question["image"])){
+            echo '<img src="'.$question["image"].'" class="img-thumbnail"><br>';
+        }
         echo '<h2>'.$question["question"].'</h2><br><hr><br>';
-        echo '<div id="answer" style="display:none;"><h1>'.$question["answer"].'</h1></div>';
         echo '<script>function showAnswer() {document.getElementById("answer").style.display = "block";}</script>';
         echo '<a onclick="showAnswer()" class="btn btn-info">Show Question</a><br><br>';
+        echo '<div id="answer" style="display:none;"><div class="panel panel-info"><div class="panel-heading">Answer</div><div class="panel-body"><h2>'.$question["answer"].'</h2></div></div></div>';
         foreach($game->getPlayers() as $playerId => $player){
             echo '<a class="btn btn-success btn-xs" href="index.php?state=updatePoints&add=yes&value='.PartyJeopardy::getQuestionValue($id).'&player='.$playerId.'"> Give points to '.$player.'</a> ';
         }

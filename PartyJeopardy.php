@@ -10,7 +10,7 @@ class PartyJeopardy{
         }
     }
 
-    private function saveState(){
+    public function saveState(){
         @mkdir("./states");
         return file_put_contents("./states/GameState", serialize($this));
     }
@@ -18,15 +18,15 @@ class PartyJeopardy{
 
     const AMOUNT_DAILY_DOUBLE = 3;
 
-    private $questions;
+    private $questions = [];
     private $playedQuestions = [];
     private $dailyDoubles = [];
 
-    private $players = [];
+    public $players = [];
     private $playerPoints = [];
 
-    public function __construct(){
-        $this->questions = json_decode(file_get_contents("./game/questions.json"), true)["boards"];
+    public function setupQuestions($file){
+        $this->questions = json_decode(file_get_contents("./game/".$file), true)["boards"];
         for($dailyDoubles = 1; $dailyDoubles <= self::AMOUNT_DAILY_DOUBLE; $dailyDoubles++){
             $this->dailyDoubles[] = $this->pickRandomQuestion();
         }
@@ -35,14 +35,12 @@ class PartyJeopardy{
                 $this->playedQuestions[$board][$category] = [];
             }
         }
-
-        $this->players = json_decode(file_get_contents("./game/players.json"), true);
-        foreach($this->players as $player){
-            $this->playerPoints[] = 0;
-        }
     }
 
     public function getPlayerPoints($player){
+        if(empty($this->playerPoints[$player])){
+            $this->playerPoints[$player] = 0;
+        }
         return $this->playerPoints[$player];
     }
 

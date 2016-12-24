@@ -12,6 +12,11 @@ While making this, I focused on functionality and not on code quality and style.
 **Warning:** This does not come with any protection whatsoever. **DO NOT** upload this to a public web server!
 Luckily, PHP has a built-in web server! Run `php -S localhost:9000` in your CLI and navigate your browser to the same address.
 
+### Game preparation
+
+To play, you need a JSON file with your own clues. An example is included with the software. 
+Put it into the `games/` folder, navigate to your web-directory and follow the setup instructions on your screen. It's really simple!
+
 ### Information
 
 This project is in no way affiliated with Jeopardy!, its producers or distributors. 
@@ -23,5 +28,11 @@ This code (except otherwise noted in the files) is published and released to the
 
 ### Screenshots
 
+Setup:
+![Screenshot of the setup screen](screenshots/setupScreen.png)
+
+Clue board:
 ![Screenshot of the clue board](screenshots/questionBoard.png)
+
+Clue detail:
 ![Screenshot of the clue screen](screenshots/questionScreen.png)
