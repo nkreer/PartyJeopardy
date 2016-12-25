@@ -111,24 +111,24 @@ class PartyJeopardy{
         switch($count){
             default:
             case 0:
-                $basePoints = 20;
-            break;
-            case 1:
-                $basePoints = 50;
-            break;
-            case 2:
                 $basePoints = 100;
             break;
+            case 1:
+                $basePoints = 400;
+            break;
+            case 2:
+                $basePoints = 600;
+            break;
             case 3:
-                $basePoints = 200;
+                $basePoints = 800;
             break;
             case 4:
-                $basePoints = 500;
+                $basePoints = 1000;
             break;
         }
-        if($board === 0){
+        if($board == 0){
             return $basePoints;
-        } elseif($board === 1) {
+        } elseif($board == 1) {
             return $basePoints * 2;
         } else {
             return 100;

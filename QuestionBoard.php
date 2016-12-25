@@ -2,10 +2,10 @@
 
 function showBoard(PartyJeopardy $game, $board){
     $gameBoard = $game->getBoard($board);
-    echo '<div class="row">';
+    echo '<div class="row text-center">';
     foreach($gameBoard["categories"] as $category => $questions){
         ?>
-            <div class="col-lg-3 text-center">
+            <div class="col-lg-2 center-col">
                 <h3><?php echo $category; ?></h3>
                 <hr>
                 <?php

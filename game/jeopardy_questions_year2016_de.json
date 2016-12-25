@@ -3,7 +3,7 @@
 	"language": "de_DE",
 	"author": "Niklas Kreer",
 	"license": "CC0 - Public Domain",
-	"notes": "Dieser Datensatz enthält Antworten und zugehörige Fragen über die Geschehnisse im Jahr 2016 und weitere Themen. Außerdem fehlt eine fünfte Kategorie, die normalerweise bei Jeopardy üblich ist.",
+	"notes": "Dieser Datensatz enthält Antworten und zugehörige Fragen über die Geschehnisse im Jahr 2016 und weitere Themen. Außerdem fehlt eine sechste Kategorie, die normalerweise bei Jeopardy üblich ist.",
 	"game": "Jeopardy",
 	"boards": [
 		{
@@ -53,26 +53,31 @@
 						"answer": "Was ist der Flughafen (in Istanbul)"
 					}
 				],
-				"Unnütz": [
+				"Bilder": [
 					{
-						"question": "Das war beim DFB bis ins Jahr 1970 nicht zugelassen",
-						"answer": "Was ist Frauenfußball"
+						"image": "http://static4.businessinsider.com/image/56c640526e97c625048b822a-480/donald-trump.jpg",
+						"question": "Donald Trump",
+						"answer": "Wer ist der neue Präsident der Vereinigten Staaten von Amerika"
 					},
 					{
-						"question": "Das Pfeifen unter Wasser ist in einem Bundesstaat dieses Landes verboten",
-						"answer": "Was sind die Vereinigten Staaten von Amerika (Florida)"
+						"image": "http://i2.mirror.co.uk/incoming/article8408495.ece/ALTERNATES/s615/Theresa-May.jpg",
+						"question": "Theresa May",
+						"answer": "Wer ist Englands neue Premierministerin"
 					},
 					{
-						"question": "39 dieser katholischen Christen waren unerlaubt verheiratet",
-						"answer": "Was sind Päpste"
+						"image": "http://i2.cdn.cnn.com/cnnnext/dam/assets/160504131831-aleppo-burning-exlarge-169.jpg",
+						"question": "Aleppo",
+						"answer": "Was ist die Eroberung dieser Stadt durch Regierungstruppen"
 					},
 					{
-						"question": "Diese Süßigkeit enthält 3 mal so viel Eisen wie Spinat",
-						"answer": "Was ist Schokolade"
+						"image": "http://ichbindeinvater.de/wp-content/uploads/2015/06/jan-boehmermann-t.jpg",
+						"question": "Jan Böhmermann",
+						"answer": "Wer löste durch ein an Recep Tayyip Erdogan gerichtetes Schmähgedicht eine Staatskriese aus"
 					},
 					{
-						"question": "Dieses Insekt schlägt 950 mal pro Sekunde mit den Flügeln",
-						"answer": "Was ist eine Mücke"
+						"image": "https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/Frank-Walter_Steinmeier_Feb_2014_(cropped).jpg/220px-Frank-Walter_Steinmeier_Feb_2014_(cropped).jpg",
+						"question": "Frank-Walter Steinmeier",
+						"answer": "Wer wird aller Voraussicht nach der neue Bundespräsident der BRD"
 					}
 				],
 				"Firmen": [
@@ -95,6 +100,28 @@
 					{
 						"question": "Samsung machte dieses Jahr Schlagzeilen mit diesem Mobiltelefon, das es wegen Explosionsgefahr weltweit zurückrufen musste",
 						"answer": "Was ist das (Samsung) Galaxy Note (7)"
+					}
+				],
+				"Ereignisse": [
+					{	
+						"question": "Dann und hier kam es zu zahlreichen sexuellen Übergriffen auf Frauen durch Nordafrikaner",
+						"answer": "Was ist die Silvesternacht in Köln"
+					},
+					{
+						"question": "Am ersten Februar rief die WHO aufgrund dieses Viruses den \"Öffentlichen Gesundheitsnotstand internationalen Ausmaßes\" aus",
+						"answer": "Was ist der Zika-Virus"
+					},
+					{
+						"question": "Ende Oktober erschütterte ein starkes Erdbeben dieses Land",
+						"answer": "Was ist Italien"
+					},
+					{
+						"question": "Der Hersteller Monsanto, der diesen vermeintlich krebserregenden Wirkstoff in seinen Produkten einsetzt, wurde von Bayer für rund 66 Millionen Euro gekauft",
+						"answer": "Was ist Glyphosat"
+					},
+					{
+						"question": "In Lohne bei Vechta in Niedersachsen löste ein technischer Defekt am Ostermontag einen Großbrand in einer Schlachterei aus",
+						"answer": "Was ist Wiesenhof"
 					}
 				]
 			}
@@ -188,6 +215,28 @@
 					{
 						"question": "Dieser Sänger gewann mit dem Song \"Glücksmoment\", der von Dieter Bohlen produziert wurde, die Casting-Show \"Deutschland sucht den Superstar\"",
 						"answer": "Wer ist Prince Damien"
+					}
+				],
+				"News": [
+					{
+						"question": "Diese Dokumente belegen, dass zahlreiche Prominente Briefkastenfirmen in Panama betrieben haben, um Steuern einzusparen",
+						"answer": "Was sind die Panama Papers"
+					},
+					{
+						"question": "Die Bundesregierung führte eine Prämie für den Kauf eines solchen Fahrzeugs in Höhe von 4000 Euro ein",
+						"answer": "Was sind Elektroautos"
+					},
+					{
+						"question": "Er sank in diesem Jahr auf ein Rekordtief. Viele Landwirte kämpfen um ihre Existenz.",
+						"answer": "Was ist der (niedrige) Milchpreis"
+					},
+					{
+						"question": "Seit Mai 2016 sind diese Bilder auf bestimmten Verpackungen pflicht",
+						"answer": "Was sind Schockbilder (auf Zigarettenschachteln)"
+					},
+					{
+						"question": "Am 27. November wird dieser Mann in seinem Motorsport der neue Weltmeister",
+						"answer": "Wer ist Nico Rosberg"
 					}
 				]
 			}

@@ -12,6 +12,13 @@
 <head>
     <title>PartyJeopardy</title>
     <link rel="stylesheet" href="./assets/styles/bootstrap.min.css">
+    <style>
+        .center-col {
+            display: inline-block;
+            float: none;
+            margin-right: -4px;
+        }
+    </style>
 </head>
 <body>
     <div class="container">
@@ -55,6 +62,11 @@
                                     header("Location: index.php");
                                     break;
                                 case 'setup':
+                                    if(is_file("./states/GameState")){
+                                        ?>
+                                            <div class="alert alert-danger">There's already a game in progress. You should press <a href="index.php?state=reset" class="btn btn-danger btn-xs">Reset</a> before you try to start a new one.</div>
+                                        <?php
+                                    }
                                     ?>
                                         <h1>PartyJeopardy Setup</h1>
                                         Welcome to PartyJeopardy! This is FLOSS software by Niklas Kreer to play the famous Jeopardy! quiz game on a local event.<br>
@@ -148,7 +160,7 @@
                             <a href="index.php?state=board" class="btn btn-default">Show Board</a>
                         </div>
                         <div class="btn-group btn-group-justified">
-                            <a href="index.php?state=setup" class="btn btn-default">Set up</a>
+                            <a href="index.php?state=setup" class="btn btn-default">PartyJeopardy Setup</a>
                         </div>
                     </div>
                 </div>
