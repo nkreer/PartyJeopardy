@@ -10,6 +10,8 @@ function enableBuzzer(PartyJeopardy $game){
                 var char = String.fromCharCode(event.which);
                 if(active == false){
                     active = true;
+                    var sound = new Audio("assets/sounds/buzzer.wav");
+                    sound.play();
                     switch(char){
                         case 'A':
                             buzzer(0);
