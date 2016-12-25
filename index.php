@@ -109,6 +109,49 @@
                                     $game->saveState();
                                     header("Location: index.php");
                                     break;
+                                case 'buzzerTest':
+                                    require "JeopardyQuestion.php";
+                                    enableBuzzer($game);
+                                    ?>
+                                    <h1>Buzzer Test</h1>
+                                    <div class="well" id="buzzerName"></div><br><br>
+                                    Each player gets their own key they can use to activate the buzzer. This functionality is supported for up to six players. You can try if it works correctly on this page.<br><br>
+                                    <table class="table table-bordered table-condensed table-striped">
+                                        <tr>
+                                            <td><b>Player</b></td>
+                                            <td><b>Key</b></td>
+                                        </tr>
+                                        <tr>
+                                            <td>Player 1</td>
+                                            <td>A</td>>
+                                        </tr>
+                                        <tr>
+                                            <td>Player 2</td>
+                                            <td>L</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Player 3</td>
+                                            <td>U</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Player 4</td>
+                                            <td>B</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Player 5</td>
+                                            <td>1</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Player 6</td>
+                                            <td>9</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Reset Buzzers</td>
+                                            <td>R</td>
+                                        </tr>
+                                    </table>
+                                    <?php
+                                    break;
                             }
                         ?>
                     </div>
@@ -161,6 +204,9 @@
                         </div>
                         <div class="btn-group btn-group-justified">
                             <a href="index.php?state=setup" class="btn btn-default">PartyJeopardy Setup</a>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                            <a href="index.php?state=buzzerTest" class="btn btn-default">Test buzzers</a>
                         </div>
                     </div>
                 </div>
