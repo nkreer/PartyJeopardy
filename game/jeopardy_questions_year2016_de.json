@@ -3,7 +3,7 @@
 	"language": "de_DE",
 	"author": "Niklas Kreer",
 	"license": "CC0 - Public Domain",
-	"notes": "Dieser Datensatz enthält Antworten und zugehörige Fragen über die Geschehnisse im Jahr 2016 und weitere Themen. Außerdem fehlt eine sechste Kategorie, die normalerweise bei Jeopardy üblich ist.",
+	"notes": "Dieser Datensatz enthält Antworten und zugehörige Fragen über die Geschehnisse im Jahr 2016.",
 	"game": "Jeopardy",
 	"boards": [
 		{
@@ -123,6 +123,28 @@
 						"question": "In Lohne bei Vechta in Niedersachsen löste ein technischer Defekt am Ostermontag einen Großbrand in einer Schlachterei aus",
 						"answer": "Was ist Wiesenhof"
 					}
+				],
+				"Fußball": [
+					{
+						"question": "Diese Mannschaft wurde 2016 deutscher Meister",
+						"answer": "Was ist der FC Bayern München"
+					},
+					{
+						"question": "Diese Mannschaft schloss die Bundesliga-Saison 2015/2016 mit dem 4. Tabellenplatz ab",
+						"answer": "Was ist Borussia Mönchengladbach"
+					},
+					{
+						"question": "Diese Mannschaft hatte am Ende des 34. Spieltages der 1. Bundesliga in der Saison 2015/2016 78 Punkte",
+						"answer": "Was ist Borussia Dortmund"
+					},
+					{
+						"question": "Diese Mannschaft ging in der Bundesliga-Saison 2016/2017 mit 30 Punkten in die Winterpause",
+						"answer": "Was ist Hertha BSC"
+					},
+					{
+						"question": "Diese Mannschaft hat zur Winterpause der Bundesliga-Saison 2016/2017 10 Punkte Abstand zum Tabellenführer",
+						"answer": "Was ist Eintracht Frankfurt"
+					}
 				]
 			}
 		},
@@ -237,6 +259,28 @@
 					{
 						"question": "Am 27. November wird dieser Mann in seinem Motorsport der neue Weltmeister",
 						"answer": "Wer ist Nico Rosberg"
+					}
+				],
+				"Tode": [
+					{
+						"question": "Dieser Schauspieler und Schwimmer verstarb im Juni",
+						"answer": "Wer war Bud Spencer"
+					},
+					{
+						"question": "Der Astronaut John Glenn verstarb im Alter von 95 Jahren",
+						"answer": "Wer war der erste Amerikaner im Weltall"
+					},
+					{
+						"question": "Kubas früherer Präsident und Revolutionsführer und verstarb im Alter von 90 Jahren",
+						"answer": "Wer war Fidel Castro"
+					},
+					{
+						"question": "Einer der beliebtesten Politiker und früherer Bundespräsident verstarb im Alter von 97 Jahren",
+						"answer": "Wer war Walter Schneel"
+					},
+					{
+						"question": "Diese Englische Labour-Abgeordnete und Brexit-Gegnerin verstarb dieses Jahr im Alter von 21 Jahren durch einen Angriff",
+						"answer": "Wer war Jo Cox"
 					}
 				]
 			}

@@ -11,25 +11,30 @@ function enableBuzzer(PartyJeopardy $game){
                 if(active == false){
                     active = true;
                     var sound = new Audio("assets/sounds/buzzer.wav");
-                    sound.play();
                     switch(char){
                         case 'A':
                             buzzer(0);
+                            sound.play();
                             break;
                         case 'L':
                             buzzer(1);
+                            sound.play();
                             break;
                         case 'U':
                             buzzer(2);
+                            sound.play();
                             break;
                         case 'B':
                             buzzer(3);
+                            sound.play();
                             break;
                         case '1':
                             buzzer(4);
+                            sound.play();
                             break;
                         case '9':
                             buzzer(5);
+                            sound.play();
                             break;
                         default:
                             active = false;
@@ -65,6 +70,8 @@ function enableBuzzer(PartyJeopardy $game){
 function showQuestion(PartyJeopardy $game, $board, $category, $id){
     echo '<div class="text-center">';
     if($game->isDailyDouble($board, $category, $id) and empty($_GET["play"])){
+        // Play a sound
+        echo '<script>var sound = new Audio("assets/sounds/dailyDouble.wav"); sound.play();</script>';
         echo '<h1>DAILY DOUBLE</h1>';
         echo '<a href="index.php?state=question&play=yes&board='.$board.'&category='.$category.'&question='.$id.'" class="btn btn-primary btn-lg">PLAY NOW</a>';
     } else {

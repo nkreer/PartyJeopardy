@@ -45,8 +45,7 @@
                                 case 'end':
                                     ?>
                                         <h1>The End</h1>
-                                        Thanks for playing PartyJeopardy! To play again, remove the <code>GameState</code> file in ./states or press the button!<br>
-                                        <br><br><a href="index.php?state=reset" class="btn btn-danger btn-lg">Reset</a><br>
+                                        Thanks for playing PartyJeopardy! To play again, remove the <code>GameState</code> file in ./states or press the <a href="index.php?state=reset" class="btn btn-danger btn-xs">Reset</a> button!<br><br>
                                     <?php
                                     break;
                                 case 'reset':
@@ -152,6 +151,25 @@
                                     </table>
                                     <?php
                                     break;
+                                case 'waiting': 
+                                    ?>
+                                    <script>
+                                        // Update this every second
+                                        setInterval(updateTime, 1000);
+
+                                        function updateTime(){
+                                            document.getElementById("time").innerHTML = "<h1>" + (new Date()).toLocaleTimeString() + "</h1>"
+                                        }
+                                    </script>
+                                    <style>
+                                        /* Make the font a lot bigger, just for the time */
+                                        h1 {
+                                            font-size: 100px;
+                                        }
+                                    </style>
+                                    <div id="time" class="text-center"></div>
+                                    <?php
+                                    break;
                             }
                         ?>
                     </div>
@@ -180,7 +198,7 @@
                                     echo '</div>';
                                     echo '</form>';
                                 }
-                            } else{
+                            } else {
                                 ?>
                                 <div class="text-center">
                                     <h3>NO PLAYERS</h3>
@@ -207,6 +225,9 @@
                         </div>
                         <div class="btn-group btn-group-justified">
                             <a href="index.php?state=buzzerTest" class="btn btn-default">Test buzzers</a>
+                        </div>
+                        <div class="btn-group btn-group-justified">
+                            <a href="index.php?state=waiting" class="btn btn-default">Waiting screen</a>
                         </div>
                     </div>
                 </div>
