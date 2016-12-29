@@ -58,7 +58,7 @@ function enableBuzzer(PartyJeopardy $game){
                         break;
                     <?php
                     foreach($game->getPlayers() as $id => $player){
-                        echo 'case '.$id.':'."\n".' document.getElementById("buzzerName").innerHTML = "<h1>'.trim($player).'</h1>";'."\n".' break;'."\n"; 
+                        echo 'case '.$id.':'."\n".' document.getElementById("buzzerName").innerHTML = "<h1 style=\'color:red;\'>'.trim($player).'</h1>";'."\n".' break;'."\n"; 
                     }
                     ?>
                 }
@@ -75,26 +75,31 @@ function showQuestion(PartyJeopardy $game, $board, $category, $id){
         echo '<h1>DAILY DOUBLE</h1>';
         echo '<a href="index.php?state=question&play=yes&board='.$board.'&category='.$category.'&question='.$id.'" class="btn btn-primary btn-lg">PLAY NOW</a>';
     } else {
+        enableBuzzer($game);
+        $question = $game->getQuestion($board, $category, $id);
+        $game->playQuestion($board, $category, $id);
         ?>
-        <!-- Button functionality to reveal the correct question/answer and the buzzer -->
+        <!-- Button functionality to reveal the correct question/answer -->
         <script>
             function showAnswer(){
-                document.getElementById("answer").style.display = "block";
+                document.getElementById("answer").innerHTML = '<div class="panel panel-info"><div class="panel-body"><h2><?php echo $question["answer"]; ?></h2></div></div>';
             }
         </script>
         <div id="buzzerName"></div>
         <?php
-        enableBuzzer($game);
-        $question = $game->getQuestion($board, $category, $id);
-        $game->playQuestion($board, $category, $id);
+        echo '<h1>'.$question["question"].'</h1>';
         if(isset($question["image"])){
             echo '<img src="'.$question["image"].'" class="img-thumbnail"><br>';
         }
-        echo '<h2>'.$question["question"].'</h2><br><hr><br>';
-        echo '<a onclick="showAnswer()" class="btn btn-info">Show Question</a><br><br>';
-        echo '<div id="answer" style="display:none;"><div class="panel panel-info"><div class="panel-heading">Answer</div><div class="panel-body"><h2>'.$question["answer"].'</h2></div></div></div>';
+        echo '<hr><div id="answer"><a onclick="showAnswer()" class="btn btn-info">Show Solution</a><br><br></div>';
+        // Give points
         foreach($game->getPlayers() as $playerId => $player){
-            echo '<a class="btn btn-success btn-xs" href="index.php?state=updatePoints&add=yes&value='.$game->getQuestionValue($id, $board).'&player='.$playerId.'"> Give points to '.$player.'</a> ';
+            echo '<a class="btn btn-success btn-xs" href="index.php?state=updatePoints&add=yes&value='.$game->getQuestionValue($id, $board).'&player='.$playerId.'">Give points to '.$player.'</a> ';
+        }
+        echo '<br><br>';
+        // Take points
+        foreach($game->getPlayers() as $playerId => $player){
+            echo '<a class="btn btn-danger btn-xs" href="index.php?state=updatePoints&remove=yes&value='.$game->getQuestionValue($id, $board).'&player='.$playerId.'&redirect='.urlencode("state=question&board=".$board."&question=".$id."&category=".$category."&play=yes").'">Take from '.$player.'</a> ';
         }
     }
     echo '<br><br><a href="index.php" class="btn btn-info btn-xs">Return to Board</a>';

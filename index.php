@@ -171,6 +171,9 @@
                                     <?php
                                     break;
                             }
+                            if(isset($_GET["redirect"])){
+                                header("Location: index.php?".urldecode($_GET["redirect"]));
+                            }
                         ?>
                     </div>
                 </div>
