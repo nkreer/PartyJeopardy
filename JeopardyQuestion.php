@@ -82,12 +82,12 @@ function showQuestion(PartyJeopardy $game, $board, $category, $id){
         <!-- Button functionality to reveal the correct question/answer -->
         <script>
             function showAnswer(){
-                document.getElementById("answer").innerHTML = '<div class="panel panel-info"><div class="panel-body"><h2><?php echo $question["answer"]; ?></h2></div></div>';
+                document.getElementById("answer").innerHTML = '<div class="panel panel-info"><div class="panel-body"><h2><?php echo htmlentities($question["answer"]); ?></h2></div></div>';
             }
         </script>
         <div id="buzzerName"></div>
         <?php
-        echo '<h1>'.$question["question"].'</h1>';
+        echo '<h1>'.htmlentities($question["question"]).'</h1>';
         if(isset($question["image"])){
             echo '<img src="'.$question["image"].'" class="img-thumbnail"><br>';
         }
